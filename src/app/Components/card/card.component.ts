@@ -7,4 +7,5 @@ import { Product } from '../product-grid/product.ds';
 })
 export class CardComponent {
   @Input() product!: Product;
+  @Input() cost: number = 990;
 }

@@ -1,10 +1,30 @@
-<div class="ml-5 mt-5 flex flex-col gap-2 lg:w-52">
+<section
+  class="flex w-[250px] flex-col rounded-[17px] border-[1px] border-solid border-slate-200 lg:w-64"
+>
   <figure
-    class="grid place-items-center rounded-lg border-[1px] border-solid border-slate-200 bg-slate-100 shadow-sm lg:h-52 lg:w-full lg:p-5"
+    class="relative grid h-40 place-items-center rounded-t-[17px] bg-slate-100 shadow-sm lg:w-full lg:p-5"
   >
-    <img [src]="product.images[0]" alt="product image" class="max-w-full" />
+    <img
+      [ngSrc]="product.images[0]"
+      alt="product image"
+      class="max-w-full rounded-t-[17px]"
+      fill
+      loading="lazy"
+    />
   </figure>
-  <p>{{ product.title }}</p>
-  <app-rating [rating]="3" [amountOfRatings]="5"></app-rating>
-  <app-button text="Add to card"></app-button>
-</div>
+  <div class="rounded-b-[17px] px-2 py-4">
+    <div class="mb-2 flex justify-between font-bold">
+      <p class="max-w-[70%]">{{ product.title }}</p>
+      <div class="flex h-7 max-w-[30%]">
+        <span class="text-[10px]">$</span>
+        <p class="self-center">{{ cost }}</p>
+      </div>
+    </div>
+    <app-rating [rating]="3" [amountOfRatings]="5"></app-rating>
+    <app-button
+      text="Add to cart"
+      icon="shopping-cart"
+      iconClass="w-18px-important h-18px-important"
+    ></app-button>
+  </div>
+</section>

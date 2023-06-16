@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FeatherModule } from 'angular-feather';
-import { Star } from 'angular-feather/icons';
+import { Star, ShoppingCart, Check } from 'angular-feather/icons';
 
 const icons = {
   Star,
+  ShoppingCart,
 };
 
 @NgModule({

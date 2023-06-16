@@ -1,9 +1,9 @@
 export interface Product {
   id: number;
-  title: String;
+  title: string;
   price: number;
-  description: String;
-  images: String[];
+  description: string;
+  images: string[];
   creationAt: Date;
   updatedAt: Date;
   category: {

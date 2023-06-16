@@ -1,0 +1,34 @@
+<nav class="flex items-center justify-between bg-black px-3 py-3">
+  <div class="relative h-5 w-7 cursor-pointer" (click)="handleToggle()">
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'absolute bottom-0 top-2 block h-1 w-7 rotate-45 bg-blue-400 transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'block h-1 w-7 -translate-x-24 transform bg-blue-400 transition-transform duration-500 ease-in-out'
+          : 'my-1 block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'absolute bottom-0 top-2 block h-1 w-7 -rotate-45 bg-blue-400 transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+  </div>
+  <figure>
+    <img src="../../../assets/img/hero.svg" alt="" width="120" height="60" />
+  </figure>
+  <ul>
+    <li></li>
+  </ul>
+</nav>

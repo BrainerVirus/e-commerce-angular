@@ -8,10 +8,16 @@ import { Product } from './product.ds';
 })
 export class ProductGridComponent implements OnInit {
   data: Product[] = [];
+  loding: boolean = false;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
+    this.loadData();
+  }
+
+  loadData() {
+    this.loding = true;
     this.productService.fetchData().subscribe((response) => {
       this.data = response.filter(
         (product) =>
@@ -24,6 +30,7 @@ export class ProductGridComponent implements OnInit {
         '🚀 ~ file: rating.component.ts:23 ~ RatingComponent ~ this.productService.fetchData ~ data:',
         this.data
       );
+      this.loding = false;
     });
   }
 }

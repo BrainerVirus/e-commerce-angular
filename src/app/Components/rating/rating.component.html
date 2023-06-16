@@ -1,12 +1,12 @@
-<div class="flex gap-2">
-  <div>
+<div class="mb-2 flex items-center gap-2">
+  <div class="flex items-center">
     <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
       <i-feather
         name="star"
         [class.fill-yellow-500-important]="star <= rating"
-        class="text-yellow-400"
+        class="h-18px-important w-18px-important text-yellow-600"
       ></i-feather>
     </ng-container>
   </div>
-  <p>({{ amountOfRatings }})</p>
+  <p class="text-[14px]">({{ amountOfRatings }})</p>
 </div>
