@@ -1,10 +1,23 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
-import { ProductsModule } from '../../products/products.module';
+import { HomePageComponent } from './home-page.component';
+import { ProductGridComponent } from './components/product-grid/product-grid.component';
+import { CardComponent } from './components/card/card.component';
+import { ButtonComponent } from '../../shared/components/button/button.component';
+import { RatingComponent } from './components/rating/rating.component';
+
+import { IconsModule } from '../../icons/icons.module';
 
 @NgModule({
-  declarations: [],
-  imports: [CommonModule, ProductsModule],
+  declarations: [
+    HomePageComponent,
+    ProductGridComponent,
+    CardComponent,
+    ButtonComponent,
+    RatingComponent,
+  ],
+  imports: [CommonModule, HttpClientModule, NgOptimizedImage, IconsModule],
 })
 export class HomePageModule {}
