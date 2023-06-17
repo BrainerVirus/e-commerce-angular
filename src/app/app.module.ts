@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 
 import { NavbarComponent } from './components/header/navbar/navbar.component';
 
-import { ProductsModule } from './products/products.module';
+import { HomePageModule } from './pages/home-page/home-page.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
-  imports: [BrowserModule, AppRoutingModule, ProductsModule],
+  imports: [BrowserModule, AppRoutingModule, HomePageModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
