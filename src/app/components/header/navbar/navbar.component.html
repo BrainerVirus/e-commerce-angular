@@ -1,4 +1,7 @@
-<nav class="flex items-center justify-between bg-black px-3 py-3">
+<nav
+  class="sticky left-0 top-0 z-10 flex items-center bg-black px-3 py-3"
+  *ngIf="width <= 768"
+>
   <div class="relative h-5 w-7 cursor-pointer" (click)="handleToggle()">
     <span
       for="hambuger-menu"
@@ -25,10 +28,41 @@
       "
     ></span>
   </div>
-  <figure>
+  <figure class="mx-auto my-0">
     <img src="../../../assets/img/hero.svg" alt="" width="120" height="60" />
   </figure>
-  <ul>
-    <li></li>
-  </ul>
+  <div
+    class="w-100svh w-100svw absolute left-0 top-12 z-10 bg-black text-white opacity-95 transition-transform duration-300 ease-in-out"
+    [ngClass]="{
+      'translate-x-0': isToggled,
+      '-translate-x-full': !isToggled
+    }"
+  >
+    <ul class="mx-auto my-0 flex w-full max-w-[85%] flex-col gap-5">
+      <li
+        class="mt-4 flex justify-between rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+      >
+        <p>Shop</p>
+        <i-feather
+          name="chevron-right"
+          class="h-18px-important w-18px-important cursor-pointer text-white"
+        ></i-feather>
+      </li>
+      <li
+        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+      >
+        Deals
+      </li>
+      <li
+        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+      >
+        What's new
+      </li>
+      <li
+        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+      >
+        About us
+      </li>
+    </ul>
+  </div>
 </nav>

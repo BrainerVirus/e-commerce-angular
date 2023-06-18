@@ -7,10 +7,11 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/header/navbar/navbar.component';
 
 import { HomePageModule } from './pages/home-page/home-page.module';
+import { IconsModule } from './icons/icons.module';
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent],
-  imports: [BrowserModule, AppRoutingModule, HomePageModule],
+  imports: [BrowserModule, AppRoutingModule, HomePageModule, IconsModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
