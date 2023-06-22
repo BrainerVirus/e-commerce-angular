@@ -9,6 +9,7 @@ import { ButtonComponent } from '../../shared/components/button/button.component
 import { RatingComponent } from './components/rating/rating.component';
 
 import { IconsModule } from '../../icons/icons.module';
+import { ProductService } from './components/product-grid/services/products.service';
 
 @NgModule({
   declarations: [
@@ -19,5 +20,6 @@ import { IconsModule } from '../../icons/icons.module';
     RatingComponent,
   ],
   imports: [CommonModule, HttpClientModule, NgOptimizedImage, IconsModule],
+  providers: [ProductService],
 })
 export class HomePageModule {}

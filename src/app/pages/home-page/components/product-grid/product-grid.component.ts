@@ -22,7 +22,7 @@ export class ProductGridComponent implements OnInit {
       this.data = response.filter(
         (product) =>
           product.category &&
-          product.category.name === 'Electronics' &&
+          // product.category.name === 'Electronics' &&
           product.title &&
           product.images.length > 0
       );

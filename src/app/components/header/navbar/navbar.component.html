@@ -1,3 +1,5 @@
+<!-- smartphones -->
+
 <nav
   class="sticky left-0 top-0 z-10 flex items-center bg-black px-3 py-3"
   *ngIf="width <= 768"
@@ -32,7 +34,85 @@
     <img src="../../../assets/img/hero.svg" alt="" width="120" height="60" />
   </figure>
   <div
-    class="w-100svh w-100svw absolute left-0 top-12 z-10 bg-black text-white opacity-95 transition-transform duration-300 ease-in-out"
+    class="h-100svh w-100svw absolute left-0 top-12 transition-transform duration-300 ease-in-out"
+    [ngClass]="{
+      'translate-x-0': isToggled,
+      '-translate-x-full': !isToggled
+    }"
+  >
+    <div
+      role="banner"
+      class="absolute -z-10 h-full w-full bg-black opacity-95"
+    ></div>
+
+    <ul
+      class="z-10 mx-auto my-0 flex w-full max-w-[85%] flex-col gap-5 text-white"
+    >
+      <li
+        class="mt-4 flex justify-between rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+      >
+        <p>Shop</p>
+        <i-feather
+          name="chevron-right"
+          class="h-18px-important w-18px-important cursor-pointer text-white"
+        ></i-feather>
+      </li>
+      <li
+        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+      >
+        Deals
+      </li>
+      <li
+        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+      >
+        What's new
+      </li>
+      <li
+        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+      >
+        About us
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- tablets -->
+
+<nav
+  class="sticky left-0 top-0 z-10 flex items-center bg-black px-3 py-3"
+  *ngIf="width > 768 && width <= 1024"
+>
+  <div class="relative h-5 w-7 cursor-pointer" (click)="handleToggle()">
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'absolute bottom-0 top-2 block h-1 w-7 rotate-45 bg-blue-400 transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'block h-1 w-7 -translate-x-24 transform bg-blue-400 transition-transform duration-500 ease-in-out'
+          : 'my-1 block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'absolute bottom-0 top-2 block h-1 w-7 -rotate-45 bg-blue-400 transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+  </div>
+  <figure class="mx-auto my-0">
+    <img src="../../../assets/img/hero.svg" alt="" width="120" height="60" />
+  </figure>
+  <div
+    class="h-100svh w-50svw absolute left-0 top-12 z-10 bg-black text-white opacity-95 transition-transform duration-300 ease-in-out"
     [ngClass]="{
       'translate-x-0': isToggled,
       '-translate-x-full': !isToggled
@@ -64,5 +144,52 @@
         About us
       </li>
     </ul>
+  </div>
+</nav>
+
+<!-- desktop -->
+
+<nav
+  class="sticky left-0 top-0 z-10 flex items-center justify-between bg-black px-10 py-3"
+  *ngIf="width > 1024"
+>
+  <figure class="my-0">
+    <img src="../../../assets/img/hero.svg" alt="" width="120" height="60" />
+  </figure>
+  <ul class="flex gap-20 text-white">
+    <li
+      class="relative flex cursor-pointer items-center justify-between rounded-lg py-4 text-lg after:absolute after:top-11 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full after:hover:bg-blue-400"
+    >
+      <span>Shop</span>
+      <i-feather
+        name="chevron-right"
+        class="w-20px-important h-20px-important cursor-pointer text-white"
+      ></i-feather>
+    </li>
+    <li
+      class="relative flex cursor-pointer items-center justify-between rounded-lg py-4 text-lg after:absolute after:top-11 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full after:hover:bg-blue-400"
+    >
+      Deals
+    </li>
+    <li
+      class="relative flex cursor-pointer items-center justify-between rounded-lg py-4 text-lg after:absolute after:top-11 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full after:hover:bg-blue-400"
+    >
+      What's new
+    </li>
+    <li
+      class="relative flex cursor-pointer items-center justify-between rounded-lg py-4 text-lg after:absolute after:top-11 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full after:hover:bg-blue-400"
+    >
+      About us
+    </li>
+  </ul>
+  <div class="flex items-center gap-5 text-white">
+    <i-feather
+      name="shopping-cart"
+      class="w-20px-important h-20px-important cursor-pointer text-white"
+    ></i-feather>
+    <i-feather
+      name="user"
+      class="w-20px-important h-20px-important cursor-pointer text-white"
+    ></i-feather>
   </div>
 </nav>

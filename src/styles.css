@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Roboto Mono";
+  font-weight: 400;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("./assets/fonts/RobotoMono-VariableFont_wght.ttf")
+    format("truetype-variations");
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  font-weight: 400;
+  font-style: italic;
+  font-named-instance: "Italic";
+  src: url("./assets/fonts/RobotoMono-Italic-VariableFont_wght.ttf")
+    format("truetype-variations");
+}
+
 @layer base {
   *,
   *::after,
@@ -11,7 +29,7 @@
   body {
     color: black;
     background: white;
-    font-family: "roboto", sans-serif;
+    font-family: "Roboto Mono", sans-serif;
     font-size: 16px;
     line-height: normal;
   }
@@ -33,12 +51,22 @@
   .h-18px-important {
     height: 18px !important;
   }
+  .w-20px-important {
+    width: 20px !important;
+  }
+  .h-20px-important {
+    height: 20px !important;
+  }
   .w-100svw {
     width: 100vw;
     width: 100svw;
   }
-  .w-100svh {
+  .h-100svh {
     height: 100vh;
     height: 100svh;
+  }
+  .w-50svw {
+    width: 50vw;
+    width: 50svw;
   }
 }
