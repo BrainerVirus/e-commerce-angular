@@ -33,6 +33,10 @@
     font-size: 16px;
     line-height: normal;
   }
+
+  /* * {
+    outline: solid 0.25rem hsla(0, 87%, 50%, 0.5);
+  } */
 }
 
 @layer utilities {
@@ -68,5 +72,8 @@
   .w-50svw {
     width: 50vw;
     width: 50svw;
+  }
+  .h-cal-nav {
+    height: calc(100vh - 55px);
   }
 }

@@ -10,6 +10,7 @@ import { RatingComponent } from './components/rating/rating.component';
 
 import { IconsModule } from '../../icons/icons.module';
 import { ProductService } from './components/product-grid/services/products.service';
+import { SellingPointsComponent } from './components/selling-points/selling-points.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProductService } from './components/product-grid/services/products.serv
     CardComponent,
     ButtonComponent,
     RatingComponent,
+    SellingPointsComponent,
   ],
   imports: [CommonModule, HttpClientModule, NgOptimizedImage, IconsModule],
   providers: [ProductService],
