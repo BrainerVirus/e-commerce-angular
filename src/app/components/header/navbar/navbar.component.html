@@ -1,7 +1,7 @@
 <!-- smartphones -->
 
 <nav
-  class="sticky left-0 top-0 z-20 flex items-center bg-black px-3 py-3"
+  class="sticky left-0 top-0 z-20 flex h-[64px] items-center bg-black px-3 py-3"
   *ngIf="width <= 768"
 >
   <div class="relative h-5 w-7 cursor-pointer" (click)="handleToggle()">
@@ -30,8 +30,14 @@
       "
     ></span>
   </div>
-  <figure class="mx-auto my-0">
-    <img src="../../../assets/img/hero.svg" alt="" width="120" height="60" />
+  <figure class="mx-auto my-0 h-[28px] w-[120px]">
+    <img
+      src="../../../assets/img/hero.svg"
+      alt=""
+      width="120"
+      height="28"
+      fetchpriority="high"
+    />
   </figure>
   <div
     class="h-100svh w-100svw absolute left-0 top-12 transition-transform duration-300 ease-in-out"
