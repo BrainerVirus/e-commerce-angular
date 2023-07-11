@@ -10,6 +10,10 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   fetchData(): Observable<Product[]> {
+    console.log(
+      'this.http.get<Product[]>(this.uri)',
+      this.http.get<Product[]>(this.uri)
+    );
     return this.http.get<Product[]>(this.uri);
   }
 }

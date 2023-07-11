@@ -1,7 +1,7 @@
 <!-- smartphones -->
 
 <nav
-  class="sticky left-0 top-0 z-10 flex items-center bg-black px-3 py-3"
+  class="sticky left-0 top-0 z-20 flex items-center bg-black px-3 py-3"
   *ngIf="width <= 768"
 >
   <div class="relative h-5 w-7 cursor-pointer" (click)="handleToggle()">
@@ -79,7 +79,7 @@
 <!-- tablets -->
 
 <nav
-  class="sticky left-0 top-0 z-10 flex items-center bg-black px-3 py-3"
+  class="sticky left-0 top-0 z-20 flex items-center bg-black px-3 py-3"
   *ngIf="width > 768 && width <= 1024"
 >
   <div class="relative h-5 w-7 cursor-pointer" (click)="handleToggle()">
@@ -150,7 +150,7 @@
 <!-- desktop -->
 
 <nav
-  class="sticky left-0 top-0 z-10 flex items-center justify-between bg-black px-10 py-3"
+  class="sticky left-0 top-0 z-20 flex items-center justify-between bg-black px-10 py-3"
   *ngIf="width > 1024"
 >
   <figure class="my-0">

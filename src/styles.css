@@ -34,8 +34,20 @@
     line-height: normal;
   }
 
+  input[type="radio"]:checked + label {
+    background-color: white;
+    opacity: 1;
+  }
+
+  input[type="radio"]:not(:checked) + label {
+    opacity: 0.5;
+  }
+
   /* * {
     outline: solid 0.25rem hsla(0, 87%, 50%, 0.5);
+  } */
+  /* .relative:hover .absolute {
+    display: block;
   } */
 }
 
@@ -75,5 +87,11 @@
   }
   .h-cal-nav {
     height: calc(100vh - 55px);
+  }
+  .translate-x-200 {
+    transform: translate(200%);
+  }
+  .-translate-x-200 {
+    transform: translate(-200%);
   }
 }

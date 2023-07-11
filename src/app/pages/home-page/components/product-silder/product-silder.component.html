@@ -1,0 +1,92 @@
+<section class="mx-auto my-0 mt-0 w-full p-0 md:mt-7 md:max-w-[80vw]">
+  <div
+    class="relative h-[200px] w-full overflow-hidden bg-slate-300 md:h-[360px] md:rounded-[17px] lg:h-[370px] xl:h-[500px]"
+  >
+    <picture
+      role="presentation"
+      class="absolute bottom-0 left-0 right-0 top-0 flex items-center"
+    >
+      <img
+        [ngSrc]="images[0].url"
+        class="max-w-full object-cover transition-transform duration-300 ease-in-out"
+        width="1920"
+        height="1080"
+        fetchpriority="high"
+        [ngClass]="{
+          'translate-x-0': index === 0,
+          '-translate-x-full': index === 1,
+          '-translate-x-200': index === 2
+        }"
+        alt="presentation image 1"
+      />
+      <img
+        [ngSrc]="images[1].url"
+        class="max-w-full object-cover transition-transform duration-300 ease-in-out"
+        width="1920"
+        height="1080"
+        fetchpriority="low"
+        [ngClass]="{
+          'translate-x-0': index === 0,
+          '-translate-x-full': index === 1,
+          '-translate-x-200': index === 2
+        }"
+        alt="presentation image 2"
+      />
+      <img
+        [ngSrc]="images[2].url"
+        class="max-w-full object-cover transition-transform duration-300 ease-in-out"
+        width="1920"
+        height="1080"
+        fetchpriority="low"
+        [ngClass]="{
+          'translate-x-0': index === 0,
+          '-translate-x-full': index === 1,
+          '-translate-x-200': index === 2
+        }"
+        alt="presentation image 3"
+      />
+    </picture>
+    <div
+      class="absolute bottom-3 left-0 right-0 z-10 mx-auto flex max-w-fit justify-center gap-3 rounded-lg"
+    >
+      <input
+        type="radio"
+        name="index"
+        id="slide-1"
+        class="hidden"
+        [checked]="index === 0"
+        (click)="setToFirstSlide()"
+      />
+      <label
+        for="slide-1"
+        class="h-[9px] w-[9px] cursor-pointer rounded-full border-2 border-white bg-white transition-all duration-150 ease-in-out hover:scale-150 md:h-[10px] md:w-[10px] xl:h-3 xl:w-3"
+      ></label>
+
+      <input
+        type="radio"
+        name="index"
+        id="slide-2"
+        class="hidden"
+        [checked]="index === 1"
+        (click)="setToSecondSlide()"
+      />
+      <label
+        for="slide-2"
+        class="h-[9px] w-[9px] cursor-pointer rounded-full border-2 border-white bg-white transition-all duration-150 ease-in-out hover:scale-150 md:h-[10px] md:w-[10px] xl:h-3 xl:w-3"
+      ></label>
+
+      <input
+        type="radio"
+        name="index"
+        id="slide-3"
+        class="hidden"
+        [checked]="index === 2"
+        (click)="setToLastSlide()"
+      />
+      <label
+        for="slide-3"
+        class="h-[9px] w-[9px] cursor-pointer rounded-full border-2 border-white bg-white transition-all duration-150 ease-in-out hover:scale-150 md:h-[10px] md:w-[10px] xl:h-3 xl:w-3"
+      ></label>
+    </div>
+  </div>
+</section>
