@@ -1,7 +1,7 @@
 <!-- smartphones -->
 
 <nav
-  class="sticky left-0 top-0 z-20 flex h-[64px] items-center bg-black px-3 py-3"
+  class="sticky left-0 top-0 z-20 flex h-[55px] items-center bg-black px-3 py-3"
   *ngIf="width <= 768"
 >
   <div class="relative h-5 w-7 cursor-pointer" (click)="handleToggle()">
@@ -35,8 +35,9 @@
       src="../../../assets/img/hero.svg"
       alt=""
       width="120"
-      height="28"
+      height="25"
       fetchpriority="high"
+      class="h-[25px]"
     />
   </figure>
   <div
@@ -117,6 +118,14 @@
   <figure class="mx-auto my-0">
     <img src="../../../assets/img/hero.svg" alt="" width="120" height="60" />
   </figure>
+  <div
+    role="banner"
+    class="w-100svw h-100svh absolute left-0 top-0 -z-[1] bg-black transition-opacity duration-300 ease-in-out"
+    [ngClass]="{
+      'opacity-40': isToggled,
+      'opacity-0': !isToggled
+    }"
+  ></div>
   <div
     class="h-100svh w-50svw absolute left-0 top-12 z-10 bg-black text-white opacity-95 transition-transform duration-300 ease-in-out"
     [ngClass]="{
