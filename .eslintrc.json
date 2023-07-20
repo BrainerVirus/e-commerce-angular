@@ -8,8 +8,8 @@
   "plugins": ["@typescript-eslint"],
   // HERE
   "extends": [
-    "standard-with-typescript",
     "eslint:recommended",
+    "standard-with-typescript",
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],

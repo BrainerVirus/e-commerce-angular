@@ -12,6 +12,7 @@ import { IconsModule } from '../../icons/icons.module';
 import { ProductService } from './components/product-grid/services/products.service';
 import { SellingPointsComponent } from './components/selling-points/selling-points.component';
 import { ProductSilderComponent } from './components/product-silder/product-silder.component';
+import { BubblesSliderComponent } from './components/bubbles-slider/bubbles-slider.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ProductSilderComponent } from './components/product-silder/product-sild
     RatingComponent,
     SellingPointsComponent,
     ProductSilderComponent,
+    BubblesSliderComponent,
   ],
   imports: [CommonModule, HttpClientModule, NgOptimizedImage, IconsModule],
   providers: [ProductService],

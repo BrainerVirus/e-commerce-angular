@@ -122,8 +122,8 @@
     role="banner"
     class="w-100svw h-100svh absolute left-0 top-0 -z-[1] bg-black transition-opacity duration-300 ease-in-out"
     [ngClass]="{
-      'opacity-40': isToggled,
-      'opacity-0': !isToggled
+      'opacity-40 transition-opacity duration-300 ease-in-out': isToggled,
+      'pointer-events-none opacity-0': !isToggled
     }"
   ></div>
   <div

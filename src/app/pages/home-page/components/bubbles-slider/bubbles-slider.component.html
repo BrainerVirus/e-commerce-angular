@@ -1,0 +1,26 @@
+<section class="mx-auto my-0 mt-7 w-[80vw]">
+  <h2 class="my-5 text-lg font-bold md:text-2xl">May interest you</h2>
+  <div class="slider-container z-50">
+    <div class="slider-item flex gap-1 md:gap-8 lg:justify-between lg:px-2">
+      <div
+        class="flex min-w-[80px] flex-col items-center gap-3 md:min-w-[90px]"
+        *ngFor="let bubble of bubbles"
+      >
+        <picture
+          class="shadow-full-sm grid h-[60px] w-[60px] place-content-center rounded-[50%] bg-bubble_bg object-center p-2 md:h-[80px] md:w-[80px] xl:h-[120px] xl:w-[120px]"
+        >
+          <img
+            src="{{ bubble.img }}"
+            alt="gaming-laptop"
+            width="1024"
+            height="1024"
+            class="h-[44px] w-[44px] max-w-full object-contain object-center md:h-[80px] md:w-[80px] xl:h-[120px] xl:w-[120px]"
+            fetchpriority="high"
+            [ngClass]="bubble.classes"
+          />
+        </picture>
+        <p class="text-xs text-gray-700 lg:text-sm">{{ bubble.title }}</p>
+      </div>
+    </div>
+  </div>
+</section>
