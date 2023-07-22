@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SilderImage } from './banner-silder.ds';
 
 @Component({
-  selector: 'app-product-silder',
+  selector: 'app-banner-silder',
   templateUrl: './banner-silder.component.html',
 })
 export class BannerSilderComponent implements OnInit {
