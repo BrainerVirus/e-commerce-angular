@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductSilderComponent } from './product-silder.component';
+import { BannerSilderComponent } from './banner-silder.component';
 
 describe('ProductSilderComponent', () => {
-  let component: ProductSilderComponent;
-  let fixture: ComponentFixture<ProductSilderComponent>;
+  let component: BannerSilderComponent;
+  let fixture: ComponentFixture<BannerSilderComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [ProductSilderComponent],
+      declarations: [BannerSilderComponent],
     });
-    fixture = TestBed.createComponent(ProductSilderComponent);
+    fixture = TestBed.createComponent(BannerSilderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

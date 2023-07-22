@@ -1,11 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SilderImage } from './produc-silder.ds';
+import { SilderImage } from './banner-silder.ds';
 
 @Component({
   selector: 'app-product-silder',
-  templateUrl: './product-silder.component.html',
+  templateUrl: './banner-silder.component.html',
 })
-export class ProductSilderComponent implements OnInit {
+export class BannerSilderComponent implements OnInit {
   @Input() images: SilderImage[] = [
     {
       url: '../../../../../assets/img/macbook-1920x1080.webp',
