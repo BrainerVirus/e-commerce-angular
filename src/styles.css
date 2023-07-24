@@ -53,11 +53,8 @@
   .fill-yellow-500-important {
     fill: theme("colors.yellow.400") !important;
   }
-  .w-22px-important {
-    width: 22px !important;
-  }
-  .h-22px-important {
-    height: 22px !important;
+  .fill-blue-300-important {
+    fill: theme("colors.blue.300") !important;
   }
   .w-18px-important {
     width: 18px !important;
@@ -70,6 +67,18 @@
   }
   .h-20px-important {
     height: 20px !important;
+  }
+  .w-22px-important {
+    width: 22px !important;
+  }
+  .h-22px-important {
+    height: 22px !important;
+  }
+  .w-25px-important {
+    width: 25px !important;
+  }
+  .h-25px-important {
+    height: 25px !important;
   }
   .w-100svw {
     width: 100vw;

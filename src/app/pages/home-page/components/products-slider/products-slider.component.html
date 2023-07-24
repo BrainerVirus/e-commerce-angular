@@ -1,0 +1,88 @@
+<section class="relative mx-auto my-0 mt-7 w-[80vw]" *ngIf="width <= 1024">
+  <h2 class="my-5 text-lg font-bold md:text-2xl">Best selling</h2>
+  <!-- <div class="slider-button absolute left-0 z-20 bg-cyan-200">
+    <button (click)="moveLeft()">Previous</button>
+  </div> -->
+  <div class="slider-container relative flex items-center">
+    <div class="slider-content flex gap-4">
+      <app-card
+        *ngFor="let item of data"
+        [product]="item"
+        class="slider-item mx-auto my-0 grid w-fit place-content-center"
+      ></app-card>
+    </div>
+  </div>
+  <!-- <div class="slider-button absolute right-0 z-20 bg-cyan-200">
+    <button (click)="moveRight()">Next</button>
+  </div> -->
+</section>
+
+<section class="relative mx-auto my-0 mt-7 w-[80vw]" *ngIf="width > 1024">
+  <h2 class="my-5 text-lg font-bold md:text-2xl">Best selling</h2>
+  <div class="relative flex items-center">
+    <button
+      (click)="moveLeft()"
+      [disabled]="virtualIndex === 0"
+      [ngClass]="{
+        'slider-button': true,
+        absolute: true,
+        '-left-6': true,
+        'z-10': true,
+        'rounded-[100%]': true,
+        'bg-white': true,
+        'p-3': true,
+        'opacity-100': hovering,
+        'opacity-0': !hovering,
+        'shadow-md': true,
+        'transition-opacity': true,
+        'duration-300': true,
+        'ease-in-out': true
+      }"
+      (mouseover)="hadleHover()"
+      (mouseleave)="handleHoverEnd()"
+    >
+      <i-feather
+        name="chevron-left"
+        class="h-25px-important w-25px-important text-blue-300"
+      ></i-feather>
+    </button>
+    <div
+      class="relative flex items-center overflow-hidden"
+      (mouseover)="hadleHover()"
+      (mouseleave)="handleHoverEnd()"
+    >
+      <div class="slider-content flex items-center gap-4">
+        <app-card
+          *ngFor="let item of visibleData"
+          [product]="item"
+          class="slider-item mx-auto my-0 grid w-fit place-content-center"
+        ></app-card>
+      </div>
+    </div>
+    <button
+      (click)="moveRight()"
+      [ngClass]="{
+        'slider-button': true,
+        absolute: true,
+        '-right-6': true,
+        'z-10': true,
+        'rounded-[100%]': true,
+        'bg-white': true,
+        'p-3': true,
+        'opacity-100': hovering,
+        'opacity-0': !hovering,
+        'shadow-md': true,
+        'transition-opacity': true,
+        'duration-300': true,
+        'ease-in-out': true
+      }"
+      (mouseover)="hadleHover()"
+      (mouseleave)="handleHoverEnd()"
+    >
+      <i-feather
+        name="chevron-right"
+        class="h-25px-important w-25px-important text-blue-300"
+      ></i-feather>
+    </button>
+  </div>
+</section>

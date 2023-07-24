@@ -9,10 +9,11 @@ import { ButtonComponent } from '../../shared/components/button/button.component
 import { RatingComponent } from './components/rating/rating.component';
 
 import { IconsModule } from '../../icons/icons.module';
-import { ProductService } from './components/product-grid/services/products.service';
+import { ProductService } from '../../shared/services/product/products.service';
 import { SellingPointsComponent } from './components/selling-points/selling-points.component';
 import { BannerSilderComponent } from './components/banner-silder/banner-silder.component';
 import { BubblesSliderComponent } from './components/bubbles-slider/bubbles-slider.component';
+import { ProductsSliderComponent } from './components/products-slider/products-slider.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BubblesSliderComponent } from './components/bubbles-slider/bubbles-slid
     SellingPointsComponent,
     BannerSilderComponent,
     BubblesSliderComponent,
+    ProductsSliderComponent,
   ],
   imports: [CommonModule, HttpClientModule, NgOptimizedImage, IconsModule],
   providers: [ProductService],

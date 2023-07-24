@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from './services/products.service';
-import { Product } from './product.ds';
+import { ProductService } from '../../../../shared/services/product/products.service';
+import { Product } from '../../../../shared/types/product.ds';
 
 @Component({
   selector: 'app-product-grid',
