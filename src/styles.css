@@ -109,6 +109,7 @@
   .slider-container {
     width: 100%;
     overflow-x: scroll;
+    overflow-y: hidden;
     scrollbar-width: none; /* Hide the scrollbar for Firefox */
     -ms-overflow-style: none; /* Hide the scrollbar for IE and Edge */
     scroll-behavior: smooth;
