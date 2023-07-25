@@ -10,7 +10,8 @@
     "test": "ng test",
     "coverage": "ng test --no-watch --code-coverage",
     "commit": "git-cz",
-    "netlify": "netlify"
+    "netlify": "netlify",
+    "deploy:prod": "npm run build && npm run netlify deploy --prod"
   },
   "private": true,
   "dependencies": {
