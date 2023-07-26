@@ -10,7 +10,6 @@
     "test": "ng test",
     "coverage": "ng test --no-watch --code-coverage",
     "commit": "git-cz",
-    "netlify": "netlify",
     "deploy:prod": "npm run build && netlify deploy --prod"
   },
   "private": true,
@@ -49,7 +48,6 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "lite-server": "^2.6.1",
-    "netlify-cli": "^15.9.1",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "prettier-plugin-tailwindcss": "^0.3.0",
