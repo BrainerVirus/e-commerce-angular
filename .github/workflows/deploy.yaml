@@ -12,6 +12,8 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: installing netlifycli
+        run: npm install -g netlify-cli
       - name: Install deps
         run: npm install
       - name: Deploy
