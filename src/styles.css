@@ -130,4 +130,7 @@
   .slider-container::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
   }
+  .h-nav-screen {
+    height: calc(100vh - 48px);
+  }
 }
