@@ -6,6 +6,10 @@ import { SilderImage } from './banner-silder.ds';
   templateUrl: './banner-silder.component.html',
 })
 export class BannerSilderComponent implements OnInit {
+  private touchStartX: number = 0;
+  private touchEndX: number = 0;
+  private readonly SWIPE_THRESHOLD: number = 50; // Adjust this threshold as needed
+
   @Input() images: SilderImage[] = [
     {
       url: '../../../../../assets/img/macbook-1920x1080.webp',
@@ -57,6 +61,31 @@ export class BannerSilderComponent implements OnInit {
 
   setToLastSlide() {
     this.index = 2;
+  }
+
+  onTouchStart(event: TouchEvent) {
+    this.touchStartX = event.touches[0].clientX;
+  }
+
+  onTouchMove(event: TouchEvent) {
+    this.touchEndX = event.touches[0].clientX;
+  }
+
+  onTouchEnd() {
+    const distanceX = this.touchEndX - this.touchStartX;
+
+    if (Math.abs(distanceX) > this.SWIPE_THRESHOLD) {
+      if (distanceX > 0) {
+        // Swiped right, go to previous slide
+        this.previousSlide();
+      } else {
+        // Swiped left, go to next slide
+        this.nextSlide();
+      }
+    }
+
+    // Reset the touch variables for the next swipe
+    this.touchStartX = this.touchEndX = 0;
   }
 
   ngOnInit() {
