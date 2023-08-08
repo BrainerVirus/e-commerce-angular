@@ -10,6 +10,9 @@ import {
   ChevronDown,
   User,
   Truck,
+  Twitter,
+  Instagram,
+  Facebook,
 } from 'angular-feather/icons';
 
 const icons = {
@@ -20,6 +23,9 @@ const icons = {
   User,
   ChevronDown,
   Truck,
+  Twitter,
+  Instagram,
+  Facebook,
 };
 
 @NgModule({

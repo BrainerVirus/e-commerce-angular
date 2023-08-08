@@ -1,0 +1,69 @@
+<footer class="mt-5 flex w-full flex-col text-white">
+  <div class="bg-blue-dark py-5" *ngIf="width <= 768">
+    <div
+      class="mx-auto my-0 grid w-[95vw] grid-cols-2 items-center justify-items-center text-sm"
+    >
+      <ul class="flex flex-col gap-3">
+        <li>Account</li>
+        <li>Favorites</li>
+        <li>Help</li>
+      </ul>
+      <ul class="flex flex-col gap-3">
+        <li>Your Orders</li>
+        <li>Find a gift</li>
+        <li>Cart</li>
+      </ul>
+    </div>
+  </div>
+
+  <div
+    class="relative bg-blue-medium pt-7 after:relative after:mx-auto after:my-5 after:block after:h-[1px] after:w-[550px] after:bg-gray-300 after:opacity-40 after:content-['']"
+    *ngIf="width > 768"
+  >
+    <div
+      class="mx-auto my-0 flex w-[95vw] items-center justify-center gap-5 text-sm"
+    >
+      <a>Account</a>
+      <a>Favorites</a>
+      <a>Help</a>
+      <a>Your Orders</a>
+      <a>Find a gift</a>
+      <a>Cart</a>
+    </div>
+  </div>
+
+  <div class="bg-blue-medium py-5 md:pb-3 md:pt-0">
+    <div class="mx-auto my-0 w-[95vw]">
+      <ul
+        class="mb-1 mt-5 flex justify-around text-[0.75rem] md:mt-0 md:justify-center md:gap-8"
+      >
+        <li>
+          <a href="#" id="">Conditions of Use</a>
+        </li>
+        <li>
+          <a href="#" id="">Privacy Notice</a>
+        </li>
+        <li>
+          <a href="#" id="">Accesibility</a>
+        </li>
+      </ul>
+      <p class="my-0 text-center text-[0.72rem] text-gray-300 opacity-90">
+        © 2023, Smart.com, Inc. or its affiliates
+      </p>
+      <div class="my-3 mt-5 flex justify-center gap-2 text-gray-300 opacity-90">
+        <i-feather
+          name="facebook"
+          class="h-18px-important w-18px-important text-gray-300 opacity-90"
+        ></i-feather>
+        <i-feather
+          name="twitter"
+          class="h-18px-important w-18px-important"
+        ></i-feather>
+        <i-feather
+          name="instagram"
+          class="h-18px-important w-18px-important"
+        ></i-feather>
+      </div>
+    </div>
+  </div>
+</footer>
