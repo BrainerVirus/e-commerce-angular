@@ -165,7 +165,12 @@
 <!-- desktop -->
 
 <nav
-  class="sticky left-0 top-0 z-20 flex items-center justify-between bg-black px-10 py-3"
+  class="sticky left-0 top-0 z-20 flex items-center justify-between px-10 py-3"
+  [ngClass]="
+    currentTheme
+      ? 'bg-ocean-blue-dark-theme-dark'
+      : 'bg-ocean-blue-light-theme-medium'
+  "
   *ngIf="width > 1024"
 >
   <figure class="my-0">
@@ -173,7 +178,12 @@
   </figure>
   <ul class="flex gap-20 text-white">
     <li
-      class="relative flex cursor-pointer items-center justify-between rounded-lg py-2 text-base after:absolute after:top-8 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full after:hover:bg-blue-400"
+      class="relative flex cursor-pointer items-center justify-between rounded-lg py-2 text-base after:absolute after:top-8 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full"
+      [ngClass]="
+        currentTheme
+          ? 'after:hover:bg-ocean-blue-dark-theme-accent'
+          : 'after:hover:bg-ocean-blue-light-theme-accent'
+      "
     >
       <span>Shop</span>
       <i-feather
@@ -182,29 +192,61 @@
       ></i-feather>
     </li>
     <li
-      class="relative flex cursor-pointer items-center justify-between rounded-lg py-2 text-base after:absolute after:top-8 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full after:hover:bg-blue-400"
+      class="relative flex cursor-pointer items-center justify-between rounded-lg py-2 text-base after:absolute after:top-8 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full"
+      [ngClass]="
+        currentTheme
+          ? 'after:hover:bg-ocean-blue-dark-theme-accent'
+          : 'after:hover:bg-ocean-blue-light-theme-accent'
+      "
     >
       Deals
     </li>
     <li
-      class="relative flex cursor-pointer items-center justify-between rounded-lg py-2 text-base after:absolute after:top-8 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full after:hover:bg-blue-400"
+      class="relative flex cursor-pointer items-center justify-between rounded-lg py-2 text-base after:absolute after:top-8 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full"
+      [ngClass]="
+        currentTheme
+          ? 'after:hover:bg-ocean-blue-dark-theme-accent'
+          : 'after:hover:bg-ocean-blue-light-theme-accent'
+      "
     >
       What's new
     </li>
     <li
-      class="relative flex cursor-pointer items-center justify-between rounded-lg py-2 text-base after:absolute after:top-8 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full after:hover:bg-blue-400"
+      class="relative flex cursor-pointer items-center justify-between rounded-lg py-2 text-base after:absolute after:top-8 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full"
+      [ngClass]="
+        currentTheme
+          ? 'after:hover:bg-ocean-blue-dark-theme-accent'
+          : 'after:hover:bg-ocean-blue-light-theme-accent'
+      "
     >
       About us
     </li>
   </ul>
   <div class="flex items-center gap-5 text-white">
     <i-feather
-      name="shopping-cart"
-      class="w-20px-important h-20px-important cursor-pointer text-white"
-    ></i-feather>
-    <i-feather
       name="user"
       class="w-20px-important h-20px-important cursor-pointer text-white"
     ></i-feather>
+    <i-feather
+      name="shopping-cart"
+      class="w-20px-important h-20px-important cursor-pointer text-white"
+    ></i-feather>
+    <!-- <button
+      (click)="toggleTheme()"
+      class="relative grid content-center items-center"
+    >
+      <i-feather
+        name="sun"
+        class="w-20px-important h-20px-important absolute cursor-pointer text-white transition-opacity duration-300 ease-out"
+        [class.opacity-100]="currentTheme"
+        [class.opacity-0]="!currentTheme"
+      ></i-feather>
+      <i-feather
+        name="moon"
+        class="w-20px-important h-20px-important absolute cursor-pointer text-white transition-opacity duration-300 ease-out"
+        [class.opacity-100]="!currentTheme"
+        [class.opacity-0]="currentTheme"
+      ></i-feather>
+    </button> -->
   </div>
 </nav>

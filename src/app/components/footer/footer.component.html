@@ -1,5 +1,13 @@
 <footer class="mt-5 flex w-full flex-col text-white">
-  <div class="bg-blue-dark py-5" *ngIf="width <= 768">
+  <div
+    class="py-5"
+    *ngIf="width <= 768"
+    [ngClass]="
+      currentTheme
+        ? 'bg-ocean-blue-dark-theme-dark'
+        : 'bg-ocean-blue-light-theme-medium'
+    "
+  >
     <div
       class="mx-auto my-0 grid w-[95vw] grid-cols-2 items-center justify-items-center text-sm"
     >
@@ -17,7 +25,12 @@
   </div>
 
   <div
-    class="relative bg-blue-medium pt-7 after:relative after:mx-auto after:my-5 after:block after:h-[1px] after:w-[550px] after:bg-gray-300 after:opacity-40 after:content-['']"
+    class="relative pt-7 after:relative after:mx-auto after:my-5 after:block after:h-[1px] after:w-[550px] after:bg-gray-300 after:opacity-40 after:content-['']"
+    [ngClass]="
+      currentTheme
+        ? 'bg-ocean-blue-dark-theme-dark'
+        : 'bg-ocean-blue-light-theme-medium'
+    "
     *ngIf="width > 768"
   >
     <div
@@ -32,7 +45,14 @@
     </div>
   </div>
 
-  <div class="bg-blue-medium py-5 md:pb-3 md:pt-0">
+  <div
+    class="py-5 md:pb-3 md:pt-0"
+    [ngClass]="
+      currentTheme
+        ? 'bg-ocean-blue-dark-theme-dark'
+        : 'bg-ocean-blue-light-theme-medium'
+    "
+  >
     <div class="mx-auto my-0 w-[95vw]">
       <ul
         class="mb-1 mt-5 flex justify-around text-[0.75rem] md:mt-0 md:justify-center md:gap-8"

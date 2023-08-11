@@ -1,4 +1,7 @@
+// navbar.component.ts
 import { Component, Input, OnInit } from '@angular/core';
+import { ThemeService } from '../../../theme.service';
+import { ThemeStatusService } from '../../../theme-status-service.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,8 +9,20 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
+  constructor(
+    private themeService: ThemeService,
+    private themeStatusService: ThemeStatusService
+  ) {}
+
+  @Input() currentTheme = this.themeService.getCurrentTheme();
+
   @Input() isToggled: boolean = false;
   width: number = 0;
+
+  toggleTheme() {
+    this.themeService.toggleTheme();
+    this.currentTheme = this.themeService.getCurrentTheme();
+  }
 
   handleToggle() {
     this.isToggled = !this.isToggled;
@@ -16,6 +31,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.updateWidth();
     window.addEventListener('resize', this.handleResize);
+
+    this.themeStatusService.themeStatus$.subscribe((isDarkTheme) => {
+      this.currentTheme = isDarkTheme;
+    });
   }
 
   handleResize = (): void => {
@@ -24,7 +43,6 @@ export class NavbarComponent implements OnInit {
 
   updateWidth(): void {
     this.width = window.innerWidth;
-    console.log(this.width);
   }
 
   ngOnDestroy(): void {

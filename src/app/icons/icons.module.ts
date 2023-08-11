@@ -13,6 +13,8 @@ import {
   Twitter,
   Instagram,
   Facebook,
+  Sun,
+  Moon,
 } from 'angular-feather/icons';
 
 const icons = {
@@ -26,6 +28,8 @@ const icons = {
   Twitter,
   Instagram,
   Facebook,
+  Sun,
+  Moon,
 };
 
 @NgModule({
