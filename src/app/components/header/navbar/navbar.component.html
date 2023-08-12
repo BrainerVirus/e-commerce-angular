@@ -1,47 +1,70 @@
 <!-- smartphones -->
-
+<!-- light theme -->
 <nav
-  class="sticky left-0 top-0 z-20 flex h-[55px] items-center bg-black px-3 py-3"
-  *ngIf="width <= 768"
+  class="sticky left-0 top-0 z-20 flex h-[55px] items-center bg-ocean-blue-light-theme-dark px-3 py-3"
+  *ngIf="width <= 768 && !currentTheme"
 >
   <div class="relative h-5 w-7 cursor-pointer" (click)="handleToggle()">
     <span
       for="hambuger-menu"
       [ngClass]="
         isToggled
-          ? 'absolute bottom-0 top-2 block h-1 w-7 rotate-45 bg-blue-400 transition-transform duration-500 ease-in-out'
-          : 'block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+          ? 'absolute bottom-0 top-2 block h-1 w-7 rotate-45 bg-white transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-white transition-transform duration-500 ease-in-out'
       "
     ></span>
     <span
       for="hambuger-menu"
       [ngClass]="
         isToggled
-          ? 'block h-1 w-7 -translate-x-24 transform bg-blue-400 transition-transform duration-500 ease-in-out'
-          : 'my-1 block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+          ? 'block h-1 w-7 -translate-x-24 transform bg-white transition-transform duration-500 ease-in-out'
+          : 'my-1 block h-1 w-7 bg-white transition-transform duration-500 ease-in-out'
       "
     ></span>
     <span
       for="hambuger-menu"
       [ngClass]="
         isToggled
-          ? 'absolute bottom-0 top-2 block h-1 w-7 -rotate-45 bg-blue-400 transition-transform duration-500 ease-in-out'
-          : 'block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+          ? 'absolute bottom-0 top-2 block h-1 w-7 -rotate-45 bg-white transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-white transition-transform duration-500 ease-in-out'
       "
     ></span>
   </div>
-  <figure class="mx-auto my-0 h-[28px] w-[120px]">
-    <img
-      src="../../../assets/img/hero.svg"
-      alt=""
-      width="120"
-      height="25"
-      fetchpriority="high"
-      class="h-[25px]"
-    />
-  </figure>
+
+  <svg
+    width="120"
+    height="28"
+    viewBox="0 0 101 26"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="mx-auto my-0 shadow-sm"
+  >
+    <g clip-path="url(#clip0_98_34)">
+      <path
+        d="M14.4993 8.27662C12.7064 6.42152 10.4198 5.62239 7.79535 5.62239C4.15752 5.59385 0.623628 7.27772 0.675597 11.1306C0.701581 15.0977 4.15752 15.8112 7.63944 16.4676C10.6017 16.9813 13.5899 17.5236 13.5119 20.3776C13.408 23.4885 10.082 24.1164 7.89929 24.1164C5.50871 24.1164 2.80633 23.1175 1.32521 20.7772L0 22.0615C1.58505 24.6872 4.70319 26 7.8733 26C11.0434 26 15.149 24.8584 15.2529 20.4918C15.4348 15.8968 11.0434 15.2975 7.82133 14.6981C5.58667 14.27 2.44254 13.7278 2.36459 11.1021C2.31262 8.59056 4.98902 7.42042 7.79535 7.4775C9.79615 7.4775 11.5891 7.79144 13.408 9.53238L14.4993 8.27662ZM47.6296 25.6861V13.8705C47.6296 8.93304 44.5114 5.53677 40.0941 5.53677C37.3397 5.53677 34.5334 7.1921 33.442 10.4171C32.3767 6.9067 29.5184 5.53677 26.79 5.53677C24.4514 5.53677 22.1648 6.6213 20.9175 9.21844L20.8915 5.93633H19.2285V25.6861H20.9955V13.9846C20.9955 10.1888 23.3341 7.42042 26.738 7.42042C30.168 7.42042 32.5326 10.1888 32.5326 13.9846V25.6861H34.3255V13.9846C34.3255 10.1888 36.6901 7.39188 40.0941 7.39188C43.524 7.39188 45.8366 10.0746 45.8366 13.8705V25.6861H47.6296ZM68.1573 5.93633V10.2744C66.6502 7.1921 63.714 5.70801 60.8037 5.70801C55.7887 5.70801 51.6572 9.78924 51.6572 15.8112C51.6572 21.8617 55.7887 26 60.8037 26C63.714 26 66.3904 24.573 68.1573 21.4907V25.6861H69.9243C69.9243 19.0933 69.9243 12.5291 69.9243 5.93633H68.1573ZM60.8037 7.59166C70.8077 7.59166 70.8077 24.0878 60.8037 24.0878C56.7241 24.0878 53.4501 20.7772 53.4501 15.8112C53.4501 10.8738 56.7241 7.59166 60.8037 7.59166ZM74.7574 5.93633V25.6861H76.5503V14.1844C76.5503 10.5884 79.1228 7.6202 82.4748 7.59166C83.5401 7.59166 84.5795 7.87706 85.5409 8.50494L86.3465 6.9067C85.1252 6.10757 83.826 5.70801 82.4748 5.73655C80.1881 5.73655 77.6417 6.79254 76.5243 9.4753L76.4464 5.93633H74.7574ZM92.5308 0.199781V5.93633H88.7111V7.59166H92.5308V19.607C92.5308 23.4885 93.752 25.9715 97.5718 25.9715C98.7151 25.9715 99.8324 25.5719 100.95 24.9726L100.352 23.3743C99.4426 23.8595 98.4552 24.1734 97.5718 24.1734C94.7654 24.1734 94.2717 22.2898 94.2717 19.607V7.59166H100.378V5.93633H94.2717V0L92.5308 0.199781Z"
+        fill="url(#paint0_linear_98_34)"
+      />
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_98_34"
+        x1="-1.73487"
+        y1="0.0331062"
+        x2="9435.77"
+        y2="4006.75"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="white" />
+        <stop offset="1" stop-color="white" />
+      </linearGradient>
+      <clipPath id="clip0_98_34">
+        <rect width="101" height="26" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+
   <div
-    class="h-nav-screen w-100dvw absolute left-0 top-12 transition-transform duration-300 ease-in-out"
+    class="h-nav-screen w-100dvw absolute left-0 top-[55px] shadow-inset transition-transform duration-300 ease-in-out"
     [ngClass]="{
       'translate-x-0': isToggled,
       '-translate-x-full': !isToggled
@@ -49,75 +72,230 @@
   >
     <div
       role="banner"
-      class="absolute -z-10 h-full w-full bg-black opacity-95"
+      class="absolute -z-10 h-full w-full bg-ocean-blue-light-theme-medium opacity-95"
     ></div>
 
     <ul
       class="z-10 mx-auto my-0 flex w-full max-w-[85%] flex-col gap-5 text-white"
     >
       <li
-        class="mt-4 flex justify-between rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+        class="mt-4 rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-light-theme-accent_nav_hover"
       >
-        <p>Shop</p>
-        <i-feather
-          name="chevron-right"
-          class="h-18px-important w-18px-important cursor-pointer text-white"
-        ></i-feather>
+        <a class="flex cursor-pointer justify-between px-4 py-3"
+          ><span>Shop</span
+          ><i-feather
+            name="chevron-right"
+            class="h-18px-important w-18px-important"
+          ></i-feather
+        ></a>
       </li>
       <li
-        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-light-theme-accent_nav_hover"
       >
-        Deals
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>Deals</span></a
+        >
       </li>
       <li
-        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-light-theme-accent_nav_hover"
       >
-        What's new
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>What's new</span></a
+        >
       </li>
       <li
-        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-light-theme-accent_nav_hover"
       >
-        About us
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>About Us</span></a
+        >
       </li>
     </ul>
   </div>
 </nav>
-
-<!-- tablets -->
-
+<!-- Dark theme -->
 <nav
-  class="sticky left-0 top-0 z-20 flex items-center bg-black px-3 py-3"
-  *ngIf="width > 768 && width <= 1024"
+  class="sticky left-0 top-0 z-20 flex h-[55px] items-center bg-ocean-blue-dark-theme-dark px-3 py-3"
+  *ngIf="width <= 768 && currentTheme"
 >
   <div class="relative h-5 w-7 cursor-pointer" (click)="handleToggle()">
     <span
       for="hambuger-menu"
       [ngClass]="
         isToggled
-          ? 'absolute bottom-0 top-2 block h-1 w-7 rotate-45 bg-blue-400 transition-transform duration-500 ease-in-out'
-          : 'block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+          ? 'absolute bottom-0 top-2 block h-1 w-7 rotate-45 bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
       "
     ></span>
     <span
       for="hambuger-menu"
       [ngClass]="
         isToggled
-          ? 'block h-1 w-7 -translate-x-24 transform bg-blue-400 transition-transform duration-500 ease-in-out'
-          : 'my-1 block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+          ? 'block h-1 w-7 -translate-x-24 transform bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
+          : 'my-1 block h-1 w-7 bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
       "
     ></span>
     <span
       for="hambuger-menu"
       [ngClass]="
         isToggled
-          ? 'absolute bottom-0 top-2 block h-1 w-7 -rotate-45 bg-blue-400 transition-transform duration-500 ease-in-out'
-          : 'block h-1 w-7 bg-blue-400 transition-transform duration-500 ease-in-out'
+          ? 'absolute bottom-0 top-2 block h-1 w-7 -rotate-45 bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
       "
     ></span>
   </div>
-  <figure class="mx-auto my-0">
-    <img src="../../../assets/img/hero.svg" alt="" width="120" height="60" />
-  </figure>
+
+  <svg
+    width="120"
+    height="28"
+    viewBox="0 0 101 26"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="mx-auto my-0 shadow-sm"
+  >
+    <g clip-path="url(#clip0_98_58)">
+      <path
+        d="M14.4993 8.27662C12.7064 6.42152 10.4198 5.62239 7.79535 5.62239C4.15752 5.59385 0.623628 7.27772 0.675597 11.1306C0.701581 15.0977 4.15752 15.8112 7.63944 16.4676C10.6017 16.9813 13.5899 17.5236 13.5119 20.3776C13.408 23.4885 10.082 24.1164 7.89929 24.1164C5.50871 24.1164 2.80633 23.1175 1.32521 20.7772L0 22.0615C1.58505 24.6872 4.70319 26 7.8733 26C11.0434 26 15.149 24.8584 15.2529 20.4918C15.4348 15.8968 11.0434 15.2975 7.82133 14.6981C5.58667 14.27 2.44254 13.7278 2.36459 11.1021C2.31262 8.59056 4.98902 7.42042 7.79535 7.4775C9.79615 7.4775 11.5891 7.79144 13.408 9.53238L14.4993 8.27662ZM47.6296 25.6861V13.8705C47.6296 8.93304 44.5114 5.53677 40.0941 5.53677C37.3397 5.53677 34.5334 7.1921 33.442 10.4171C32.3767 6.9067 29.5184 5.53677 26.79 5.53677C24.4514 5.53677 22.1648 6.6213 20.9175 9.21844L20.8915 5.93633H19.2285V25.6861H20.9955V13.9846C20.9955 10.1888 23.3341 7.42042 26.738 7.42042C30.168 7.42042 32.5326 10.1888 32.5326 13.9846V25.6861H34.3255V13.9846C34.3255 10.1888 36.6901 7.39188 40.0941 7.39188C43.524 7.39188 45.8366 10.0746 45.8366 13.8705V25.6861H47.6296ZM68.1573 5.93633V10.2744C66.6502 7.1921 63.714 5.70801 60.8037 5.70801C55.7887 5.70801 51.6572 9.78924 51.6572 15.8112C51.6572 21.8617 55.7887 26 60.8037 26C63.714 26 66.3904 24.573 68.1573 21.4907V25.6861H69.9243C69.9243 19.0933 69.9243 12.5291 69.9243 5.93633H68.1573ZM60.8037 7.59166C70.8077 7.59166 70.8077 24.0878 60.8037 24.0878C56.7241 24.0878 53.4501 20.7772 53.4501 15.8112C53.4501 10.8738 56.7241 7.59166 60.8037 7.59166ZM74.7574 5.93633V25.6861H76.5503V14.1844C76.5503 10.5884 79.1228 7.6202 82.4748 7.59166C83.5401 7.59166 84.5795 7.87706 85.5409 8.50494L86.3465 6.9067C85.1252 6.10757 83.826 5.70801 82.4748 5.73655C80.1881 5.73655 77.6417 6.79254 76.5243 9.4753L76.4464 5.93633H74.7574ZM92.5308 0.199781V5.93633H88.7111V7.59166H92.5308V19.607C92.5308 23.4885 93.752 25.9715 97.5718 25.9715C98.7151 25.9715 99.8324 25.5719 100.95 24.9726L100.352 23.3743C99.4426 23.8595 98.4552 24.1734 97.5718 24.1734C94.7654 24.1734 94.2717 22.2898 94.2717 19.607V7.59166H100.378V5.93633H94.2717V0L92.5308 0.199781Z"
+        fill="url(#paint0_linear_98_58)"
+      />
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_98_58"
+        x1="-1.73487"
+        y1="0.0331062"
+        x2="9435.77"
+        y2="4006.75"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#0076DD" />
+        <stop offset="1" stop-color="#00CDE9" />
+      </linearGradient>
+      <clipPath id="clip0_98_58">
+        <rect width="101" height="26" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+
+  <div
+    class="h-nav-screen w-100dvw absolute left-0 top-[55px] shadow-inset transition-transform duration-300 ease-in-out"
+    [ngClass]="{
+      'translate-x-0': isToggled,
+      '-translate-x-full': !isToggled
+    }"
+  >
+    <div
+      role="banner"
+      class="absolute -z-10 h-full w-full bg-ocean-blue-dark-theme-light opacity-95"
+    ></div>
+
+    <ul
+      class="z-10 mx-auto my-0 flex w-full max-w-[85%] flex-col gap-5 text-white"
+    >
+      <li
+        class="mt-4 rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
+      >
+        <a class="flex cursor-pointer justify-between px-4 py-3"
+          ><span>Shop</span
+          ><i-feather
+            name="chevron-right"
+            class="h-18px-important w-18px-important"
+          ></i-feather
+        ></a>
+      </li>
+      <li
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
+      >
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>Deals</span></a
+        >
+      </li>
+      <li
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
+      >
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>What's new</span></a
+        >
+      </li>
+      <li
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
+      >
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>About Us</span></a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- tablets -->
+<!-- Light theme -->
+<nav
+  class="sticky left-0 top-0 z-20 flex h-[55px] items-center bg-ocean-blue-light-theme-dark px-3 py-3"
+  *ngIf="width > 768 && width <= 1024 && !currentTheme"
+>
+  <div
+    class="relative h-5 w-7 cursor-pointer"
+    (click)="handleToggle()"
+    *ngIf="!currentTheme"
+  >
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'absolute bottom-0 top-2 block h-1 w-7 rotate-45 bg-white transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-white transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'block h-1 w-7 -translate-x-24 transform bg-white transition-transform duration-500 ease-in-out'
+          : 'my-1 block h-1 w-7 bg-white transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'absolute bottom-0 top-2 block h-1 w-7 -rotate-45 bg-white transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-white transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+  </div>
+  <svg
+    width="120"
+    height="28"
+    viewBox="0 0 101 26"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="mx-auto my-0 shadow-sm"
+    *ngIf="!currentTheme"
+  >
+    <g clip-path="url(#clip0_98_34)">
+      <path
+        d="M14.4993 8.27662C12.7064 6.42152 10.4198 5.62239 7.79535 5.62239C4.15752 5.59385 0.623628 7.27772 0.675597 11.1306C0.701581 15.0977 4.15752 15.8112 7.63944 16.4676C10.6017 16.9813 13.5899 17.5236 13.5119 20.3776C13.408 23.4885 10.082 24.1164 7.89929 24.1164C5.50871 24.1164 2.80633 23.1175 1.32521 20.7772L0 22.0615C1.58505 24.6872 4.70319 26 7.8733 26C11.0434 26 15.149 24.8584 15.2529 20.4918C15.4348 15.8968 11.0434 15.2975 7.82133 14.6981C5.58667 14.27 2.44254 13.7278 2.36459 11.1021C2.31262 8.59056 4.98902 7.42042 7.79535 7.4775C9.79615 7.4775 11.5891 7.79144 13.408 9.53238L14.4993 8.27662ZM47.6296 25.6861V13.8705C47.6296 8.93304 44.5114 5.53677 40.0941 5.53677C37.3397 5.53677 34.5334 7.1921 33.442 10.4171C32.3767 6.9067 29.5184 5.53677 26.79 5.53677C24.4514 5.53677 22.1648 6.6213 20.9175 9.21844L20.8915 5.93633H19.2285V25.6861H20.9955V13.9846C20.9955 10.1888 23.3341 7.42042 26.738 7.42042C30.168 7.42042 32.5326 10.1888 32.5326 13.9846V25.6861H34.3255V13.9846C34.3255 10.1888 36.6901 7.39188 40.0941 7.39188C43.524 7.39188 45.8366 10.0746 45.8366 13.8705V25.6861H47.6296ZM68.1573 5.93633V10.2744C66.6502 7.1921 63.714 5.70801 60.8037 5.70801C55.7887 5.70801 51.6572 9.78924 51.6572 15.8112C51.6572 21.8617 55.7887 26 60.8037 26C63.714 26 66.3904 24.573 68.1573 21.4907V25.6861H69.9243C69.9243 19.0933 69.9243 12.5291 69.9243 5.93633H68.1573ZM60.8037 7.59166C70.8077 7.59166 70.8077 24.0878 60.8037 24.0878C56.7241 24.0878 53.4501 20.7772 53.4501 15.8112C53.4501 10.8738 56.7241 7.59166 60.8037 7.59166ZM74.7574 5.93633V25.6861H76.5503V14.1844C76.5503 10.5884 79.1228 7.6202 82.4748 7.59166C83.5401 7.59166 84.5795 7.87706 85.5409 8.50494L86.3465 6.9067C85.1252 6.10757 83.826 5.70801 82.4748 5.73655C80.1881 5.73655 77.6417 6.79254 76.5243 9.4753L76.4464 5.93633H74.7574ZM92.5308 0.199781V5.93633H88.7111V7.59166H92.5308V19.607C92.5308 23.4885 93.752 25.9715 97.5718 25.9715C98.7151 25.9715 99.8324 25.5719 100.95 24.9726L100.352 23.3743C99.4426 23.8595 98.4552 24.1734 97.5718 24.1734C94.7654 24.1734 94.2717 22.2898 94.2717 19.607V7.59166H100.378V5.93633H94.2717V0L92.5308 0.199781Z"
+        fill="url(#paint0_linear_98_34)"
+      />
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_98_34"
+        x1="-1.73487"
+        y1="0.0331062"
+        x2="9435.77"
+        y2="4006.75"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="white" />
+        <stop offset="1" stop-color="white" />
+      </linearGradient>
+      <clipPath id="clip0_98_34">
+        <rect width="101" height="26" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
   <div
     role="banner"
     class="w-100dvw h-100dvh absolute left-0 top-0 -z-[1] bg-black transition-opacity duration-300 ease-in-out"
@@ -127,7 +305,7 @@
     }"
   ></div>
   <div
-    class="w-50svw h-nav-screen absolute left-0 top-12 z-10 overflow-y-auto bg-black text-white opacity-95 transition-transform duration-300 ease-in-out"
+    class="w-50svw h-nav-screen absolute left-0 top-[55px] z-10 overflow-y-auto bg-ocean-blue-light-theme-medium text-white opacity-95 shadow-inset transition-transform duration-300 ease-in-out"
     [ngClass]="{
       'translate-x-0': isToggled,
       '-translate-x-full': !isToggled
@@ -135,28 +313,155 @@
   >
     <ul class="mx-auto my-0 flex w-full max-w-[85%] flex-col gap-5">
       <li
-        class="mt-4 flex justify-between rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+        class="mt-4 rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
       >
-        <p>Shop</p>
-        <i-feather
-          name="chevron-right"
-          class="h-18px-important w-18px-important cursor-pointer text-white"
-        ></i-feather>
+        <a class="flex cursor-pointer justify-between px-4 py-3"
+          ><span>Shop</span
+          ><i-feather
+            name="chevron-right"
+            class="h-18px-important w-18px-important"
+          ></i-feather
+        ></a>
       </li>
       <li
-        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
       >
-        Deals
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>Deals</span></a
+        >
       </li>
       <li
-        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
       >
-        What's new
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>What's new</span></a
+        >
       </li>
       <li
-        class="rounded-lg px-4 py-3 transition-colors duration-300 ease-in-out hover:bg-blue-400"
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
       >
-        About us
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>About Us</span></a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+<!-- Dark theme -->
+<nav
+  class="sticky left-0 top-0 z-20 flex h-[55px] items-center bg-ocean-blue-dark-theme-dark px-3 py-3"
+  *ngIf="width > 768 && width <= 1024 && currentTheme"
+>
+  <!-- dark theme hamburger menu -->
+  <div
+    class="relative h-5 w-7 cursor-pointer"
+    (click)="handleToggle()"
+    *ngIf="currentTheme"
+  >
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'absolute bottom-0 top-2 block h-1 w-7 rotate-45 bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'block h-1 w-7 -translate-x-24 transform bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
+          : 'my-1 block h-1 w-7 bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+    <span
+      for="hambuger-menu"
+      [ngClass]="
+        isToggled
+          ? 'absolute bottom-0 top-2 block h-1 w-7 -rotate-45 bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
+          : 'block h-1 w-7 bg-ocean-blue-dark-theme-accent transition-transform duration-500 ease-in-out'
+      "
+    ></span>
+  </div>
+  <svg
+    width="120"
+    height="28"
+    viewBox="0 0 101 26"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="mx-auto my-0 shadow-sm"
+    *ngIf="currentTheme"
+  >
+    <g clip-path="url(#clip0_98_58)">
+      <path
+        d="M14.4993 8.27662C12.7064 6.42152 10.4198 5.62239 7.79535 5.62239C4.15752 5.59385 0.623628 7.27772 0.675597 11.1306C0.701581 15.0977 4.15752 15.8112 7.63944 16.4676C10.6017 16.9813 13.5899 17.5236 13.5119 20.3776C13.408 23.4885 10.082 24.1164 7.89929 24.1164C5.50871 24.1164 2.80633 23.1175 1.32521 20.7772L0 22.0615C1.58505 24.6872 4.70319 26 7.8733 26C11.0434 26 15.149 24.8584 15.2529 20.4918C15.4348 15.8968 11.0434 15.2975 7.82133 14.6981C5.58667 14.27 2.44254 13.7278 2.36459 11.1021C2.31262 8.59056 4.98902 7.42042 7.79535 7.4775C9.79615 7.4775 11.5891 7.79144 13.408 9.53238L14.4993 8.27662ZM47.6296 25.6861V13.8705C47.6296 8.93304 44.5114 5.53677 40.0941 5.53677C37.3397 5.53677 34.5334 7.1921 33.442 10.4171C32.3767 6.9067 29.5184 5.53677 26.79 5.53677C24.4514 5.53677 22.1648 6.6213 20.9175 9.21844L20.8915 5.93633H19.2285V25.6861H20.9955V13.9846C20.9955 10.1888 23.3341 7.42042 26.738 7.42042C30.168 7.42042 32.5326 10.1888 32.5326 13.9846V25.6861H34.3255V13.9846C34.3255 10.1888 36.6901 7.39188 40.0941 7.39188C43.524 7.39188 45.8366 10.0746 45.8366 13.8705V25.6861H47.6296ZM68.1573 5.93633V10.2744C66.6502 7.1921 63.714 5.70801 60.8037 5.70801C55.7887 5.70801 51.6572 9.78924 51.6572 15.8112C51.6572 21.8617 55.7887 26 60.8037 26C63.714 26 66.3904 24.573 68.1573 21.4907V25.6861H69.9243C69.9243 19.0933 69.9243 12.5291 69.9243 5.93633H68.1573ZM60.8037 7.59166C70.8077 7.59166 70.8077 24.0878 60.8037 24.0878C56.7241 24.0878 53.4501 20.7772 53.4501 15.8112C53.4501 10.8738 56.7241 7.59166 60.8037 7.59166ZM74.7574 5.93633V25.6861H76.5503V14.1844C76.5503 10.5884 79.1228 7.6202 82.4748 7.59166C83.5401 7.59166 84.5795 7.87706 85.5409 8.50494L86.3465 6.9067C85.1252 6.10757 83.826 5.70801 82.4748 5.73655C80.1881 5.73655 77.6417 6.79254 76.5243 9.4753L76.4464 5.93633H74.7574ZM92.5308 0.199781V5.93633H88.7111V7.59166H92.5308V19.607C92.5308 23.4885 93.752 25.9715 97.5718 25.9715C98.7151 25.9715 99.8324 25.5719 100.95 24.9726L100.352 23.3743C99.4426 23.8595 98.4552 24.1734 97.5718 24.1734C94.7654 24.1734 94.2717 22.2898 94.2717 19.607V7.59166H100.378V5.93633H94.2717V0L92.5308 0.199781Z"
+        fill="url(#paint0_linear_98_58)"
+      />
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_98_58"
+        x1="-1.73487"
+        y1="0.0331062"
+        x2="9435.77"
+        y2="4006.75"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#0076DD" />
+        <stop offset="1" stop-color="#00CDE9" />
+      </linearGradient>
+      <clipPath id="clip0_98_58">
+        <rect width="101" height="26" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+  <div
+    role="banner"
+    class="w-100dvw h-100dvh absolute left-0 top-0 -z-[1] bg-black transition-opacity duration-300 ease-in-out"
+    [ngClass]="{
+      'opacity-40 transition-opacity duration-300 ease-in-out': isToggled,
+      'pointer-events-none opacity-0': !isToggled
+    }"
+  ></div>
+  <div
+    class="w-50svw h-nav-screen absolute left-0 top-[55px] z-10 overflow-y-auto bg-ocean-blue-dark-theme-medium text-white opacity-95 shadow-inset transition-transform duration-300 ease-in-out"
+    [ngClass]="{
+      'translate-x-0': isToggled,
+      '-translate-x-full': !isToggled
+    }"
+  >
+    <ul class="mx-auto my-0 flex w-full max-w-[85%] flex-col gap-5">
+      <li
+        class="mt-4 rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
+      >
+        <a class="flex cursor-pointer justify-between px-4 py-3"
+          ><span>Shop</span
+          ><i-feather
+            name="chevron-right"
+            class="h-18px-important w-18px-important"
+          ></i-feather
+        ></a>
+      </li>
+      <li
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
+      >
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>Deals</span></a
+        >
+      </li>
+      <li
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
+      >
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>What's new</span></a
+        >
+      </li>
+      <li
+        class="rounded-lg transition-colors duration-150 ease-in-out hover:bg-ocean-blue-dark-theme-accent"
+      >
+        <a class="flex cursor-pointer items-center px-4 py-3"
+          ><span>About Us</span></a
+        >
       </li>
     </ul>
   </div>
@@ -169,13 +474,77 @@
   [ngClass]="
     currentTheme
       ? 'bg-ocean-blue-dark-theme-dark'
-      : 'bg-ocean-blue-light-theme-medium'
+      : 'bg-ocean-blue-light-theme-dark'
   "
   *ngIf="width > 1024"
 >
-  <figure class="my-0">
-    <img src="../../../assets/img/hero.svg" alt="" width="120" height="60" />
-  </figure>
+  <!-- Light theme -->
+  <svg
+    width="120"
+    height="40"
+    viewBox="0 0 101 26"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="my-0 shadow-sm"
+    *ngIf="!currentTheme"
+  >
+    <g clip-path="url(#clip0_98_34)">
+      <path
+        d="M14.4993 8.27662C12.7064 6.42152 10.4198 5.62239 7.79535 5.62239C4.15752 5.59385 0.623628 7.27772 0.675597 11.1306C0.701581 15.0977 4.15752 15.8112 7.63944 16.4676C10.6017 16.9813 13.5899 17.5236 13.5119 20.3776C13.408 23.4885 10.082 24.1164 7.89929 24.1164C5.50871 24.1164 2.80633 23.1175 1.32521 20.7772L0 22.0615C1.58505 24.6872 4.70319 26 7.8733 26C11.0434 26 15.149 24.8584 15.2529 20.4918C15.4348 15.8968 11.0434 15.2975 7.82133 14.6981C5.58667 14.27 2.44254 13.7278 2.36459 11.1021C2.31262 8.59056 4.98902 7.42042 7.79535 7.4775C9.79615 7.4775 11.5891 7.79144 13.408 9.53238L14.4993 8.27662ZM47.6296 25.6861V13.8705C47.6296 8.93304 44.5114 5.53677 40.0941 5.53677C37.3397 5.53677 34.5334 7.1921 33.442 10.4171C32.3767 6.9067 29.5184 5.53677 26.79 5.53677C24.4514 5.53677 22.1648 6.6213 20.9175 9.21844L20.8915 5.93633H19.2285V25.6861H20.9955V13.9846C20.9955 10.1888 23.3341 7.42042 26.738 7.42042C30.168 7.42042 32.5326 10.1888 32.5326 13.9846V25.6861H34.3255V13.9846C34.3255 10.1888 36.6901 7.39188 40.0941 7.39188C43.524 7.39188 45.8366 10.0746 45.8366 13.8705V25.6861H47.6296ZM68.1573 5.93633V10.2744C66.6502 7.1921 63.714 5.70801 60.8037 5.70801C55.7887 5.70801 51.6572 9.78924 51.6572 15.8112C51.6572 21.8617 55.7887 26 60.8037 26C63.714 26 66.3904 24.573 68.1573 21.4907V25.6861H69.9243C69.9243 19.0933 69.9243 12.5291 69.9243 5.93633H68.1573ZM60.8037 7.59166C70.8077 7.59166 70.8077 24.0878 60.8037 24.0878C56.7241 24.0878 53.4501 20.7772 53.4501 15.8112C53.4501 10.8738 56.7241 7.59166 60.8037 7.59166ZM74.7574 5.93633V25.6861H76.5503V14.1844C76.5503 10.5884 79.1228 7.6202 82.4748 7.59166C83.5401 7.59166 84.5795 7.87706 85.5409 8.50494L86.3465 6.9067C85.1252 6.10757 83.826 5.70801 82.4748 5.73655C80.1881 5.73655 77.6417 6.79254 76.5243 9.4753L76.4464 5.93633H74.7574ZM92.5308 0.199781V5.93633H88.7111V7.59166H92.5308V19.607C92.5308 23.4885 93.752 25.9715 97.5718 25.9715C98.7151 25.9715 99.8324 25.5719 100.95 24.9726L100.352 23.3743C99.4426 23.8595 98.4552 24.1734 97.5718 24.1734C94.7654 24.1734 94.2717 22.2898 94.2717 19.607V7.59166H100.378V5.93633H94.2717V0L92.5308 0.199781Z"
+        fill="url(#paint0_linear_98_34)"
+      />
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_98_34"
+        x1="-1.73487"
+        y1="0.0331062"
+        x2="9435.77"
+        y2="4006.75"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#00CDE9" />
+        <stop offset="1" stop-color="#00CDE9" />
+      </linearGradient>
+      <clipPath id="clip0_98_34">
+        <rect width="101" height="26" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+  <!-- Dark theme -->
+  <svg
+    width="120"
+    height="40"
+    viewBox="0 0 101 26"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="my-0 shadow-sm"
+    *ngIf="currentTheme"
+  >
+    <g clip-path="url(#clip0_98_58)">
+      <path
+        d="M14.4993 8.27662C12.7064 6.42152 10.4198 5.62239 7.79535 5.62239C4.15752 5.59385 0.623628 7.27772 0.675597 11.1306C0.701581 15.0977 4.15752 15.8112 7.63944 16.4676C10.6017 16.9813 13.5899 17.5236 13.5119 20.3776C13.408 23.4885 10.082 24.1164 7.89929 24.1164C5.50871 24.1164 2.80633 23.1175 1.32521 20.7772L0 22.0615C1.58505 24.6872 4.70319 26 7.8733 26C11.0434 26 15.149 24.8584 15.2529 20.4918C15.4348 15.8968 11.0434 15.2975 7.82133 14.6981C5.58667 14.27 2.44254 13.7278 2.36459 11.1021C2.31262 8.59056 4.98902 7.42042 7.79535 7.4775C9.79615 7.4775 11.5891 7.79144 13.408 9.53238L14.4993 8.27662ZM47.6296 25.6861V13.8705C47.6296 8.93304 44.5114 5.53677 40.0941 5.53677C37.3397 5.53677 34.5334 7.1921 33.442 10.4171C32.3767 6.9067 29.5184 5.53677 26.79 5.53677C24.4514 5.53677 22.1648 6.6213 20.9175 9.21844L20.8915 5.93633H19.2285V25.6861H20.9955V13.9846C20.9955 10.1888 23.3341 7.42042 26.738 7.42042C30.168 7.42042 32.5326 10.1888 32.5326 13.9846V25.6861H34.3255V13.9846C34.3255 10.1888 36.6901 7.39188 40.0941 7.39188C43.524 7.39188 45.8366 10.0746 45.8366 13.8705V25.6861H47.6296ZM68.1573 5.93633V10.2744C66.6502 7.1921 63.714 5.70801 60.8037 5.70801C55.7887 5.70801 51.6572 9.78924 51.6572 15.8112C51.6572 21.8617 55.7887 26 60.8037 26C63.714 26 66.3904 24.573 68.1573 21.4907V25.6861H69.9243C69.9243 19.0933 69.9243 12.5291 69.9243 5.93633H68.1573ZM60.8037 7.59166C70.8077 7.59166 70.8077 24.0878 60.8037 24.0878C56.7241 24.0878 53.4501 20.7772 53.4501 15.8112C53.4501 10.8738 56.7241 7.59166 60.8037 7.59166ZM74.7574 5.93633V25.6861H76.5503V14.1844C76.5503 10.5884 79.1228 7.6202 82.4748 7.59166C83.5401 7.59166 84.5795 7.87706 85.5409 8.50494L86.3465 6.9067C85.1252 6.10757 83.826 5.70801 82.4748 5.73655C80.1881 5.73655 77.6417 6.79254 76.5243 9.4753L76.4464 5.93633H74.7574ZM92.5308 0.199781V5.93633H88.7111V7.59166H92.5308V19.607C92.5308 23.4885 93.752 25.9715 97.5718 25.9715C98.7151 25.9715 99.8324 25.5719 100.95 24.9726L100.352 23.3743C99.4426 23.8595 98.4552 24.1734 97.5718 24.1734C94.7654 24.1734 94.2717 22.2898 94.2717 19.607V7.59166H100.378V5.93633H94.2717V0L92.5308 0.199781Z"
+        fill="url(#paint0_linear_98_58)"
+      />
+    </g>
+    <defs>
+      <linearGradient
+        id="paint0_linear_98_58"
+        x1="-1.73487"
+        y1="0.0331062"
+        x2="9435.77"
+        y2="4006.75"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#0076DD" />
+        <stop offset="1" stop-color="#00CDE9" />
+      </linearGradient>
+      <clipPath id="clip0_98_58">
+        <rect width="101" height="26" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>
+
   <ul class="flex gap-20 text-white">
     <li
       class="relative flex cursor-pointer items-center justify-between rounded-lg py-2 text-base after:absolute after:top-8 after:h-[4px] after:w-0 after:transition-all after:duration-300 after:ease-in-out after:content-[''] after:hover:w-full"
@@ -231,7 +600,7 @@
       name="shopping-cart"
       class="w-20px-important h-20px-important cursor-pointer text-white"
     ></i-feather>
-    <!-- <button
+    <button
       (click)="toggleTheme()"
       class="relative grid content-center items-center"
     >
@@ -247,6 +616,6 @@
         [class.opacity-100]="!currentTheme"
         [class.opacity-0]="currentTheme"
       ></i-feather>
-    </button> -->
+    </button>
   </div>
 </nav>
